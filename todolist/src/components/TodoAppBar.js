@@ -7,16 +7,20 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
+import Switch from "@material-ui/core/Switch";
 
-const styles = {};
+const styles = theme => {
+  console.log("appBar", theme.palette);
+};
 
-function TodoAppBar({ classes }) {
+function TodoAppBar({ changeHandler, classes }) {
   return (
     <AppBar position="static" color="primary">
       <Toolbar>
         <Typography component="h1" variant="h6" color="inherit">
           My Todo List
         </Typography>
+        <Switch onClick={changeHandler} />
       </Toolbar>
     </AppBar>
   );

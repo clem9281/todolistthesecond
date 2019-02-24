@@ -7,7 +7,7 @@ import Todo from "./Todo";
 import TodoForm from "./TodoForm";
 
 const styles = theme => {
-  console.log("theme", theme);
+  console.log("list", theme.palette);
   return {
     root: {
       ...theme.mixins.gutters(),

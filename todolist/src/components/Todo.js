@@ -8,7 +8,7 @@ import IconButton from "@material-ui/core/IconButton";
 import { withStyles } from "@material-ui/core/styles";
 
 const styles = theme => {
-  console.log("todo", theme);
+  console.log("todo", theme.palette);
   return {
     listItem: {
       paddingLeft: 0,

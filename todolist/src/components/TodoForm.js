@@ -3,10 +3,11 @@ import { withStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 const styles = theme => {
+  console.log("form", theme.palette);
   return {
     submit: {
       display: "block",
-      margin: "0 auto"
+      margin: "20px auto"
     }
   };
 };
@@ -19,7 +20,7 @@ const TodoForm = ({ classes }) => {
         margin="dense"
         fullWidth
       />
-      <Button variant="outlined" color="primary" className={classes.submit}>
+      <Button variant="contained" color="primary" className={classes.submit}>
         Add Item
       </Button>
     </form>
