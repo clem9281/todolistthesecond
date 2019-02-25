@@ -8,7 +8,6 @@ import IconButton from "@material-ui/core/IconButton";
 import { withStyles } from "@material-ui/core/styles";
 
 const styles = theme => {
-  console.log("todo", theme.palette);
   return {
     listItem: {
       paddingLeft: 0,
@@ -21,19 +20,14 @@ const styles = theme => {
   };
 };
 
-const Todo = ({ value, classes }) => {
+const Todo = ({ classes, todo }) => {
   return (
-    <ListItem
-      key={value}
-      role={undefined}
-      className={classes.listItem}
-      dense
-      button
-    >
+    <ListItem key={todo} role={undefined} className={classes.listItem} button>
       <Checkbox />
       <ListItemText
         className={classes.listItemText}
-        primary={`Line item ${value}`}
+        primary={todo.text}
+        primaryTypographyProps={{ fontSize: "2rem" }}
         secondary="some more text"
       />
       <ListItemSecondaryAction>

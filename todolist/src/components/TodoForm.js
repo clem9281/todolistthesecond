@@ -3,7 +3,6 @@ import { withStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 const styles = theme => {
-  console.log("form", theme.palette);
   return {
     submit: {
       display: "block",
@@ -11,16 +10,25 @@ const styles = theme => {
     }
   };
 };
-const TodoForm = ({ classes }) => {
+const TodoForm = ({ classes, todoText, changeValue, submitHandler }) => {
+  console.log(classes);
   return (
-    <form>
+    <form onSubmit={submitHandler}>
       <TextField
         id="standard-dense"
         label="New Item"
         margin="dense"
+        value={todoText}
+        onChange={changeValue}
         fullWidth
+        required
       />
-      <Button variant="contained" color="primary" className={classes.submit}>
+      <Button
+        type="submit"
+        variant="contained"
+        color="primary"
+        className={classes.submit}
+      >
         Add Item
       </Button>
     </form>

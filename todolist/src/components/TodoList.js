@@ -7,7 +7,6 @@ import Todo from "./Todo";
 import TodoForm from "./TodoForm";
 
 const styles = theme => {
-  console.log("list", theme.palette);
   return {
     root: {
       ...theme.mixins.gutters(),
@@ -18,12 +17,18 @@ const styles = theme => {
   };
 };
 
-const TodoList = ({ classes }) => {
+const TodoList = ({ classes, todos, todoText, changeValue, submitHandler }) => {
   return (
     <Paper className={classes.root} elevation={1}>
       <List>
-        <Todo value={1} />
-        <TodoForm />
+        {todos.map((todo, index) => (
+          <Todo todo={todo} key={index} />
+        ))}
+        <TodoForm
+          todoText={todoText}
+          changeValue={changeValue}
+          submitHandler={submitHandler}
+        />
       </List>
     </Paper>
   );

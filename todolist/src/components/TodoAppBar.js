@@ -9,9 +9,7 @@ import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import Switch from "@material-ui/core/Switch";
 
-const styles = theme => {
-  console.log("appBar", theme.palette);
-};
+const styles = theme => {};
 
 function TodoAppBar({ changeHandler, classes }) {
   return (
