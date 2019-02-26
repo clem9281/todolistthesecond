@@ -7,11 +7,17 @@ const styles = theme => {
     submit: {
       display: "block",
       margin: "20px auto"
+    },
+    light: {
+      background: theme.palette.primary.dark
+    },
+    dark: {
+      background: theme.palette.primary.light
     }
   };
 };
 const TodoForm = ({ classes, todoText, changeValue, submitHandler }) => {
-  console.log(classes);
+  console.log(1, classes);
   return (
     <form onSubmit={submitHandler}>
       <TextField
